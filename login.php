@@ -8,4 +8,4 @@ $select_db = mysqli_select_db($connection, 'booklocker');
 if (!$select_db){
     $connection->query("CREATE DATABASE booklocker");
 }
-$connection->query("CREATE TABLE users (id int AUTOINCREMENT PRIMARY KEY NOT NULL, username varchar(25), passwordhash VARCHAR(60)) IF NOT EXISTS");
+$connection->query("CREATE TABLE IF NOT EXISTS users (id int AUTO_INCREMENT PRIMARY KEY NOT NULL, username varchar(25), passwordhash VARCHAR(60))");
